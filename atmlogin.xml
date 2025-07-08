@@ -1,0 +1,75 @@
+<DisplayFile name="ATMDisplay" dspSize="24x80">
+  <Record name="LOGIN">
+    <FunctionKey key="F3" indicator="03" label="FOR EXIT" />
+    <Field row="2" col="2" type="DATE" editCode="Y" />
+    <Field row="2" col="70" type="TIME" />
+    <Field row="3" col="2" name="USER" />
+    <Label row="4" col="31" text="ATM LOGIN" attributes="HI,RI" />
+    <Label row="8" col="22" text="ENTER ACCOUNTS DETAILS TO LOGIN" />
+    <Label row="11" col="22" text="ACCOUNT NUMBER :" color="WHITE" />
+    <Field name="LOGINACC" row="11" col="41" length="10" type="BOTH" color="WHITE" />
+    <Field name="LOGINERR" row="17" col="22" length="20" type="OUTPUT" color="RED" />
+    <Label row="14" col="22" text="USER DETAILS :" />
+    <Field name="LOGINNAME" row="14" col="41" length="20" type="OUTPUT" dspAttr="UL" />
+    <Label row="12" col="22" text="ACCOUNT PIN :" color="WHITE" />
+    <Field name="LOGINPIN" row="12" col="41" length="4" type="BOTH" />
+  </Record>
+
+  <Record name="MENU">
+    <FunctionKey key="F12" indicator="12" label="FOR CANCLE" />
+    <Field row="2" col="1" type="DATE" editCode="Y" />
+    <Field row="2" col="71" type="TIME" />
+    <Field row="3" col="1" name="USER" />
+    <Label row="4" col="31" text="ABC BANK ATM" color="TURQUOISE" dspAttr="RI" />
+    <Label row="7" col="13" text="OPTIONS" />
+    <Label row="9" col="21" text="1. CHECK BALANCE" />
+    <Label row="11" col="21" text="2. WITHDRAW CASH" />
+    <Label row="13" col="21" text="3. DEPOSITE CASH" />
+    <Label row="15" col="21" text="4. MINI STAMENT" />
+    <Label row="17" col="21" text="5. EXIT" />
+    <Label row="19" col="14" text="SELECT OPTION NUMBER :" color="YELLOW" />
+    <Field name="MENUOPT" row="19" col="39" length="2" type="INPUT" />
+    <Field name="MENUERR" row="21" col="14" length="20" type="OUTPUT" color="RED" />
+  </Record>
+
+  <Record name="CHECKBALAN">
+    <FunctionKey key="F3" indicator="03" label="for exit" />
+    <Field row="2" col="2" type="DATE" editCode="Y" />
+    <Field row="2" col="70" type="TIME" />
+    <Label row="3" col="32" text="ACCOUNT BALANCE" />
+    <Line row="6" col="19" text="----------------------------------------" />
+    <Label row="8" col="24" text="ACCOUNT NUMBER     :" />
+    <Label row="10" col="24" text="ACCOUNT HOLDER NAME:" />
+    <Label row="12" col="24" text="CURRENT BALANCE    :" />
+    <Line row="16" col="18" text="----------------------------------------" />
+    <Field name="ACCNUMBER" row="8" col="47" length="10" type="BOTH" color="RED" />
+    <Field name="ACCNAME" row="10" col="47" length="20" type="BOTH" color="RED" />
+    <Field name="ACCBALANCE" row="12" col="47" length="10" type="OUTPUT" color="RED" dspAttr="RI" />
+  </Record>
+
+  <Record name="WITHDRAW">
+    <FunctionKey key="F3" indicator="03" label="FOR EXIT" />
+    <FunctionKey key="F12" indicator="12" label="FOR CANCEL" />
+    <Field row="2" col="2" type="DATE" editCode="Y" />
+    <Field row="2" col="71" type="TIME" />
+    <Label row="4" col="31" text="WITHDRAW MONEY" />
+    <Label row="8" col="23" text="ACCOUNT NUMBER   :" />
+    <Label row="10" col="23" text="ENTER AMOUNT TO WITHDRAW" />
+    <Label row="10" col="48" text=":" />
+    <Field name="WITHACCNO" row="8" col="43" length="10" type="BOTH" />
+    <Field name="AMOUNT" row="10" col="52" length="10" type="INPUT" />
+    <Field name="WITHERR" row="14" col="23" length="20" type="OUTPUT" color="RED" />
+  </Record>
+
+  <Record name="DEPOSIT">
+    <Field row="3" col="2" type="DATE" editCode="Y" />
+    <Field row="4" col="2" name="USER" />
+    <Field row="3" col="71" type="TIME" />
+    <Label row="3" col="33" text="Deposit amount" dspAttr="RI" />
+    <Label row="9" col="23" text="ACCOUNT NUMBER" />
+    <Field name="FLD001" row="9" col="45" length="10" type="OUTPUT" dspAttr="UL" />
+    <Label row="11" col="23" text="DEPOSIT AMOUNT  :" />
+    <Field name="FLD002" row="11" col="45" length="10" type="INPUT" />
+    <Field name="FLD003" row="15" col="22" length="20" type="OUTPUT" color="RED" />
+  </Record>
+</DisplayFile>
